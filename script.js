@@ -859,7 +859,7 @@ function finalSubmit() {
        ================================================= */
 
     let url =
-        "https://script.google.com/macros/s/AKfycbx5DImqgmnSgKSe8SSfygd6ncOatgOB4z6QVXlMaPUZccU9szejyGLIip4QMNsV953GxQ/exec?test=2";
+        "https://script.google.com/macros/s/AKfycbw_8wKPMhnPIu1nrFTjznFrp0vaPky7-SEmbznvavhWFHt3w49DKxz8jyXycO2Bu_gnnA/exec";
 
 
     /* =================================================
