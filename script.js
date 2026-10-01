@@ -3,6 +3,11 @@ let current = 0;
 let answers =
     new Array(questions.length).fill(null);
 
+const TOTAL_MARKS = questions.reduce(
+    (total, q) => total + q.marks,
+    0
+);
+
 let review =
     new Array(questions.length).fill(false);
 
@@ -12,7 +17,12 @@ let timerInterval;
 
 const EXAM_TIME = 60 * 60;
 
+function updateTestDetails() {
 
+    document.getElementById("totalMarks").innerText =
+        TOTAL_MARKS;
+
+}
 /* =====================================================
    START EXAM
    ===================================================== */
