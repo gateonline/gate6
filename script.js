@@ -12,13 +12,13 @@ let timerInterval;
 
 const EXAM_TIME = 60 * 60;
 
+const TOTAL_QUESTIONS = questions.length;
 
-/* =====================================================
-   GOOGLE APPS SCRIPT URL
-   ===================================================== */
-
-const GOOGLE_APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbx5DImqgmnSgKSe8SSfygd6ncOatgOB4z6QVXlMaPUZccU9szejyGLIip4QMNsV953GxQ/exec";
+const TOTAL_MARKS =
+    questions.reduce(
+        (sum, q) => sum + q.marks,
+        0
+    );
 
 
 /* =====================================================
@@ -40,7 +40,7 @@ function startExam() {
     examEnded = false;
 
     sessionStorage.setItem(
-        "polymerGateTest5StartTime",
+        "polymerGateExamStartTime",
         Date.now()
     );
 
@@ -118,51 +118,10 @@ function loadQuestion() {
 
 
     /* ============================
-       NAT
-       ============================ */
-
-    if (q.type === "NAT") {
-
-        let previous =
-            answers[current];
-
-        html = `
-
-            <div class="nat-answer">
-
-                <label>
-                    Enter your answer:
-                </label>
-
-                <input
-                    type="number"
-                    id="natInput"
-                    step="any"
-                    placeholder="Enter answer"
-                    value="${
-                        previous !== null &&
-                        previous !== undefined
-                        ? previous
-                        : ""
-                    }"
-                >
-
-                <p class="nat-note">
-                    Enter the answer to the required precision.
-                </p>
-
-            </div>
-
-        `;
-
-    }
-
-
-    /* ============================
        MSQ
        ============================ */
 
-    else if (q.type === "MSQ") {
+    if (q.type === "MSQ") {
 
         q.options.forEach(
             function(opt, i) {
@@ -252,52 +211,6 @@ function saveCurrentAnswer() {
 
     let q =
         questions[current];
-
-
-    /* ============================
-       NAT
-       ============================ */
-
-    if (q.type === "NAT") {
-
-        let input =
-            document.getElementById(
-                "natInput"
-            );
-
-
-        if (
-            !input ||
-            input.value.trim() === ""
-        ) {
-
-            answers[current] = null;
-
-            return false;
-
-        }
-
-
-        let value =
-            parseFloat(
-                input.value
-            );
-
-
-        if (Number.isNaN(value)) {
-
-            answers[current] = null;
-
-            return false;
-
-        }
-
-
-        answers[current] = value;
-
-        return true;
-
-    }
 
 
     /* ============================
@@ -504,8 +417,7 @@ function updatePalette() {
         }
 
         else if (
-            answers[i] !== null &&
-            answers[i] !== undefined
+            answers[i] !== null
         ) {
 
             colorClass =
@@ -532,7 +444,7 @@ function updatePalette() {
 
 
 /* =====================================================
-   JUMP TO QUESTION
+   JUMP
    ===================================================== */
 
 function jump(i) {
@@ -562,7 +474,7 @@ function updateTimer() {
     let startTime =
         Number(
             sessionStorage.getItem(
-                "polymerGateTest5StartTime"
+                "polymerGateExamStartTime"
             )
         );
 
@@ -771,47 +683,6 @@ function calculateScore() {
 
 
         /* ============================
-           NAT
-           ============================ */
-
-        if (q.type === "NAT") {
-
-            if (
-                answers[i] === null ||
-                answers[i] === undefined ||
-                q.answer === null ||
-                q.answer === undefined
-            ) {
-
-                continue;
-
-            }
-
-
-            let tolerance =
-                q.tolerance !== undefined
-                ? q.tolerance
-                : 0.01;
-
-
-            if (
-                Math.abs(
-                    answers[i] -
-                    q.answer
-                ) <= tolerance
-            ) {
-
-                score += q.marks;
-
-            }
-
-
-            continue;
-
-        }
-
-
-        /* ============================
            MSQ
            ============================ */
 
@@ -981,19 +852,30 @@ function finalSubmit() {
 
 
     /* =================================================
-       SEND DATA TO GOOGLE SHEETS
+       GOOGLE APPS SCRIPT WEB APP
+
+       test=2 tells Apps Script to use Sheet6.
+       Existing test without test=2 continues to use Sheet5.
        ================================================= */
 
     let url =
-        GOOGLE_APPS_SCRIPT_URL;
+        "https://script.google.com/macros/s/AKfycbx5DImqgmnSgKSe8SSfygd6ncOatgOB4z6QVXlMaPUZccU9szejyGLIip4QMNsV953GxQ/exec?test=2";
 
+
+    /* =================================================
+       CANDIDATE NAME
+       ================================================= */
 
     url +=
-        "?name=" +
+        "&name=" +
         encodeURIComponent(
             name
         );
 
+
+    /* =================================================
+       MOBILE
+       ================================================= */
 
     url +=
         "&mobile=" +
@@ -1003,7 +885,7 @@ function finalSubmit() {
 
 
     /* =================================================
-       SEND Q1-Q25
+       SEND Q1-Q26
        ================================================= */
 
     for (
@@ -1023,25 +905,7 @@ function finalSubmit() {
             answers[i] !== undefined
         ) {
 
-            /* ============================
-               NAT
-               ============================ */
-
             if (
-                q.type === "NAT"
-            ) {
-
-                answer =
-                    answers[i];
-
-            }
-
-
-            /* ============================
-               MSQ
-               ============================ */
-
-            else if (
                 q.type === "MSQ"
             ) {
 
@@ -1067,11 +931,6 @@ function finalSubmit() {
                 }
 
             }
-
-
-            /* ============================
-               MCQ
-               ============================ */
 
             else if (
                 q.type === "MCQ"
@@ -1099,7 +958,7 @@ function finalSubmit() {
 
 
     /* =================================================
-       SCORE
+       FINAL SCORE
        ================================================= */
 
     url +=
@@ -1163,7 +1022,8 @@ function finalSubmit() {
         "resultScore"
     ).innerText =
         score.toFixed(2) +
-        " / 40";
+        " / " +
+        TOTAL_MARKS;
 
 
     document.getElementById(
@@ -1173,7 +1033,7 @@ function finalSubmit() {
 
 
     sessionStorage.removeItem(
-        "polymerGateTest5StartTime"
+        "polymerGateExamStartTime"
     );
 
 }
