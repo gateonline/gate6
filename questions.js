@@ -1,704 +1,670 @@
-<!DOCTYPE html>
-<html>
+const questions = [
 
-<head>
+    /* =====================================================
+       Q1 — MCQ — 1 MARK
+       ===================================================== */
 
-    <title>POLYMER GATE | Polymer Science & Engineering</title>
+    {
+        question:
+            "High-impact polystyrene (HIPS) is prepared by incorporating which of the following rubber phases into a general-purpose polystyrene (GPPS) matrix?",
 
-    <link rel="stylesheet" href="style.css">
+        options: [
+            "Isoprene rubber",
+            "Polybutadiene rubber",
+            "Butyl rubber",
+            "Natural rubber"
+        ],
 
-</head>
+        answer: 1,
 
+        type: "MCQ",
 
-<body>
+        marks: 1
+    },
 
 
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
+    /* =====================================================
+       Q2 — MCQ — 1 MARK
+       ===================================================== */
 
-<div class="header">
+    {
+        question:
+            "Linear low-density polyethylene (LLDPE) is primarily synthesized by:",
 
-    <div class="header-title">
-        POLYMER GATE - Polymer Science & Engineering
-    </div>
+        options: [
+            "Free-radical copolymerization of ethylene and propylene",
+            "Free-radical copolymerization of ethylene and α-styrene",
+            "Copolymerization of ethylene with one or more α-olefins",
+            "Free-radical polymerization of ethylene using a thermal initiator"
+        ],
 
+        answer: 2,
 
-    <div class="header-right">
+        type: "MCQ",
 
-        <div class="timer-box">
+        marks: 1
+    },
 
-            <span class="timer-label">
-                Time Left
-            </span>
 
-            <span id="timer">
-                60:00
-            </span>
+    /* =====================================================
+       Q3 — MCQ — 1 MARK
+       ===================================================== */
 
-        </div>
+    {
+        question:
+            "A rubber component is exposed to hot water, steam, oxygen, ozone and outdoor weathering. Which polymer is generally associated with this combination?",
 
+        options: [
+            "NBR",
+            "EPDM",
+            "BR",
+            "IIR"
+        ],
 
-        <button
-            id="calculatorButton"
-            class="calculator-button"
-            onclick="openCalculator()"
-            disabled>
+        answer: 1,
 
-            🧮 Calculator
+        type: "MCQ",
 
-        </button>
+        marks: 1
+    },
 
-    </div>
 
-</div>
+    /* =====================================================
+       Q4 — MCQ — 1 MARK
+       ===================================================== */
 
+    {
+        question:
+            "Increasing the acrylonitrile content of NBR generally causes:",
 
+        options: [
+            "Decreased polarity and decreased oil resistance",
+            "Increased polarity and improved oil resistance",
+            "Complete elimination of rubber elasticity",
+            "Conversion of NBR into EPDM"
+        ],
 
-<!-- =====================================================
-     START SCREEN
-     ===================================================== -->
+        answer: 1,
 
-<div
-    id="startScreen"
-    class="start-screen">
+        type: "MCQ",
 
-    <div class="instructions-box">
+        marks: 1
+    },
 
-        <h1>
-            POLYMER GATE
-        </h1>
 
-        <h2>
-            GATE XE-F Polymer Science Mock Test
-        </h2>
+    /* =====================================================
+       Q5 — MCQ — 1 MARK
+       ===================================================== */
 
+    {
+        question:
+            "A polymer has an aromatic backbone containing:\n\n" +
+            "–O–Ph–C(CH₃)₂–Ph–O–\n\n" +
+            "and carbonate groups are incorporated into the backbone.\n\n" +
+            "The polymer is:",
 
-        <div class="test-details">
+        options: [
+            "PEEK",
+            "Polycarbonate",
+            "PPO",
+            "PSU"
+        ],
 
-            <div>
+        answer: 1,
 
-                <strong>
-                    Total Questions
-                </strong>
+        type: "MCQ",
 
-                <span>
-                    26
-                </span>
+        marks: 1
+    },
 
-            </div>
 
+    /* =====================================================
+       Q6 — MCQ — 1 MARK
+       ===================================================== */
 
-            <div>
+    {
+        question:
+            "Consider the structure of a crosslinked polymer shown in the figure. From the options given, identify the monomers that are used in the synthesis of the polymer. (G-23)",
 
-                <strong>
-                    Total Marks
-                </strong>
+        image: "q6.png",
 
-                <span>
-                    42
-                </span>
+        options: [
+            "Melamine and Benzaldehyde",
+            "Melamine and Acetone",
+            "Melamine and Formaldehyde",
+            "Melamine and Ethanol"
+        ],
 
-            </div>
+        answer: 2,
 
+        type: "MCQ",
 
-            <div>
+        marks: 1
+    },
 
-                <strong>
-                    Total Time
-                </strong>
 
-                <span>
-                    60 minutes
-                </span>
+    /* =====================================================
+       Q7 — MCQ — 1 MARK
+       ===================================================== */
 
-            </div>
+    {
+        question:
+            "Increasing the acrylonitrile content in NBR generally tends to:",
 
-        </div>
+        options: [
+            "Reduce polarity and oil resistance",
+            "Increase polarity and improve oil resistance",
+            "Convert NBR into EPDM",
+            "Eliminate the need for vulcanization"
+        ],
 
+        answer: 1,
 
-        <h3>
-            Test Instructions
-        </h3>
+        type: "MCQ",
 
-        <ul class="instructions-list">
+        marks: 1
+    },
 
-            <li>
-                The test contains <strong>26 questions</strong>.
-            </li>
 
-            <li>
-                Questions 1–10 carry <strong>1 mark</strong> each.
-            </li>
+    /* =====================================================
+       Q8 — MCQ — 1 MARK
+       ===================================================== */
 
-            <li>
-                Questions 11–26 carry <strong>2 marks</strong> each.
-            </li>
+    {
+        question:
+            "Increasing the acrylonitrile content in NBR generally tends to:",
 
-            <li>
-                The total marks are <strong>42</strong>.
-            </li>
+        options: [
+            "Reduce polarity and oil resistance",
+            "Increase polarity and improve oil resistance",
+            "Convert NBR into EPDM",
+            "Eliminate the need for vulcanization"
+        ],
 
-            <li>
-                The total duration is <strong>60 minutes</strong>.
-            </li>
+        answer: 1,
 
-            <li>
-                The timer starts only after you click
-                <strong>START EXAM</strong>.
-            </li>
+        type: "MCQ",
 
-            <li>
-                Use <strong>Save & Next</strong> to save your response.
-            </li>
+        marks: 1
+    },
 
-            <li>
-                Use <strong>Previous</strong> to return to a previous question.
-            </li>
 
-            <li>
-                Use <strong>Clear</strong> to clear your response.
-            </li>
+    /* =====================================================
+       Q9 — MCQ — 1 MARK
+       ===================================================== */
 
-            <li>
-                Use <strong>Mark for Review</strong> to mark a question.
-            </li>
+    {
+        question:
+            "A fibre precursor contains a high concentration of nitrile groups. During conversion to carbon fibre, the precursor is first thermally stabilized and then subjected to high-temperature treatment under an inert atmosphere.\n\n" +
+            "The primary purpose of the stabilization step is to:",
 
-            <li>
-                <strong>Green</strong> = Answered
-            </li>
+        options: [
+            "Melt the polymer completely",
+            "Convert it into a thermally stable ladder-like structure before carbonization",
+            "Remove all nitrogen instantly",
+            "Plasticize the fibre"
+        ],
 
-            <li>
-                <strong>Purple</strong> = Marked for Review
-            </li>
+        answer: 1,
 
-            <li>
-                <strong>Grey</strong> = Not Answered
-            </li>
+        type: "MCQ",
 
-            <li>
-                An on-screen calculator is available.
-            </li>
+        marks: 1
+    },
 
-            <li>
-                The examination will be automatically submitted after
-                <strong>60 minutes</strong>.
-            </li>
 
-        </ul>
+    /* =====================================================
+       Q10 — MCQ — 1 MARK
+       ===================================================== */
 
+    {
+        question:
+            "A polymer has:\n\n" +
+            "• high crystallinity\n" +
+            "• strong intermolecular hydrogen bonding\n" +
+            "• relatively high melting temperature\n" +
+            "• significant moisture sensitivity\n\n" +
+            "Which class is most consistent with these characteristics?",
 
-        <h3>
-            Question Types
-        </h3>
+        options: [
+            "Polyolefin",
+            "Polyamide",
+            "Fluoropolymer",
+            "Silicone rubber"
+        ],
 
-        <ul class="instructions-list">
+        answer: 1,
 
-            <li>
-                <strong>MCQ:</strong>
-                Only one option can be selected.
-            </li>
+        type: "MCQ",
 
-            <li>
-                <strong>MSQ:</strong>
-                One or more options can be selected.
-            </li>
+        marks: 1
+    },
 
-        </ul>
 
+    /* =====================================================
+       Q11 — MCQ — 2 MARKS
+       ===================================================== */
 
-        <h3>
-            Marking Scheme
-        </h3>
+    {
+        question:
+            "Four elastomers are being considered:\n\n" +
+            "P: good oil/fuel resistance\n" +
+            "Q: excellent ozone/weather resistance\n" +
+            "R: very low gas permeability\n" +
+            "S: high natural resilience and good general mechanical properties\n\n" +
+            "Which assignment is most appropriate?",
 
+        options: [
+            "P–IIR, Q–NR, R–NBR, S–EPDM",
+            "P–NBR, Q–EPDM, R–IIR, S–NR",
+            "P–NR, Q–IIR, R–EPDM, S–NBR",
+            "P–EPDM, Q–NBR, R–NR, S–IIR"
+        ],
 
-        <div class="marking-scheme">
+        answer: 1,
 
-            <div>
+        type: "MCQ",
 
-                <strong>
-                    1-Mark MCQ
-                </strong>
+        marks: 2
+    },
 
-                <span>
-                    Correct: +1
-                </span>
 
-                <span>
-                    Wrong: −1/3
-                </span>
+    /* =====================================================
+       Q12 — MCQ — 2 MARKS
+       ===================================================== */
 
-                <span>
-                    Unanswered: 0
-                </span>
+    {
+        question:
+            "Among the options given, identify the correct match between the polymers and their glass transition temperatures (Tg). (G-23)",
 
-            </div>
+        options: [
+            "P–2; Q–4; R–3; S–1",
+            "P–3; Q–1; R–4; S–2",
+            "P–3; Q–4; R–1; S–2",
+            "P–4; Q–2; R–1; S–3"
+        ],
 
+        answer: 1,
 
-            <div>
+        type: "MCQ",
 
-                <strong>
-                    2-Mark MCQ
-                </strong>
+        marks: 2
+    },
 
-                <span>
-                    Correct: +2
-                </span>
 
-                <span>
-                    Wrong: −2/3
-                </span>
+    /* =====================================================
+       Q13 — MCQ — 2 MARKS
+       ===================================================== */
 
-                <span>
-                    Unanswered: 0
-                </span>
+    {
+        question:
+            "A nylon component absorbs a significant amount of moisture during service. Which combination of changes is most likely?",
 
-            </div>
+        options: [
+            "Tg increases, modulus increases, flexibility decreases",
+            "Tg decreases, modulus decreases, flexibility increases",
+            "Tg increases, modulus decreases, flexibility increases",
+            "Tg decreases, modulus increases, flexibility decreases"
+        ],
 
+        answer: 1,
 
-            <div>
+        type: "MCQ",
 
-                <strong>
-                    MSQ
-                </strong>
+        marks: 2
+    },
 
-                <span>
-                    Correct: Full marks
-                </span>
 
-                <span>
-                    Wrong: 0
-                </span>
+    /* =====================================================
+       Q14 — MCQ — 2 MARKS
+       ===================================================== */
 
-                <span>
-                    Unanswered: 0
-                </span>
+    {
+        question:
+            "Match the following polymers with their characteristics:\n\n" +
 
-            </div>
+            "P. NBR\n" +
+            "Q. EPDM\n" +
+            "R. PTFE\n" +
+            "S. UHMWPE\n\n" +
 
-        </div>
+            "1. Very low friction\n" +
+            "2. Oil resistance\n" +
+            "3. Ozone/weather resistance\n" +
+            "4. High wear resistance\n\n" +
 
+            "Choose the correct match.",
 
-        <div class="important-note">
+        options: [
+            "P–2, Q–3, R–1, S–4",
+            "P–3, Q–2, R–4, S–1",
+            "P–2, Q–1, R–3, S–4",
+            "P–4, Q–3, R–2, S–1"
+        ],
 
-            <strong>
-                Important:
-            </strong>
+        answer: 0,
 
-            Once you click
-            <strong>START EXAM</strong>,
-            the timer will begin.
+        type: "MCQ",
 
-        </div>
+        marks: 2
+    },
 
 
-        <button
-            id="startButton"
-            class="start-button"
-            onclick="startExam()">
+    /* =====================================================
+       Q15 — MCQ — 2 MARKS
+       ===================================================== */
 
-            START EXAM
+    {
+        question:
+            "What is the correct order of decreasing crystallinity of the given polymers?\n\n" +
 
-        </button>
+            "P. Atactic-Polypropylene\n" +
+            "Q. Syndiotactic-Polystyrene\n" +
+            "R. Nylon 6\n" +
+            "S. Polyethylene terephthalate (PET)",
 
-    </div>
+        options: [
+            "P > R > S > Q",
+            "S > Q > P > R",
+            "Q > S > R > P",
+            "S > R > Q > P"
+        ],
 
-</div>
+        answer: 3,
 
+        type: "MCQ",
 
+        marks: 2
+    },
 
-<!-- =====================================================
-     EXAM AREA
-     ===================================================== -->
 
-<div
-    id="examArea"
-    class="container"
-    style="display:none;">
+    /* =====================================================
+       Q16 — MCQ — 2 MARKS
+       ===================================================== */
 
-    <div class="question-area">
+    {
+        question:
+            "Which is the most appropriate order of increasing tensile strength for the following polymers?\n\n" +
+            "P: LDPE\n" +
+            "Q: HDPE\n" +
+            "R: Nylon-6\n" +
+            "S: PP",
 
-        <div
-            class="question-type"
-            id="questionType">
-        </div>
+        options: [
+            "P < S < Q < R",
+            "S < P < Q < R",
+            "P < Q < S < R",
+            "P < S < R < Q"
+        ],
 
+        answer: 0,
 
-        <h3 id="question"></h3>
+        type: "MCQ",
 
+        marks: 2
+    },
 
-        <div id="options"></div>
 
+    /* =====================================================
+       Q17 — MCQ — 2 MARKS
+       ===================================================== */
 
-        <div class="buttons">
+    {
+        question:
+            "Two polymers have identical chemical repeat units but different stereochemical arrangements. Polymer P is atactic, whereas polymer Q is isotactic.\n\n" +
+            "Which statement is most appropriate?",
 
-            <button
-                onclick="prevQuestion()">
+        options: [
+            "P must have a higher crystallinity than Q",
+            "Q generally has greater ability to crystallize than P",
+            "P and Q must have identical crystallinity",
+            "P must have a higher density than Q"
+        ],
 
-                Previous
+        answer: 1,
 
-            </button>
+        type: "MCQ",
 
+        marks: 2
+    },
 
-            <button
-                onclick="clearResponse()">
 
-                Clear
+    /* =====================================================
+       Q18 — MSQ — 2 MARKS
+       ===================================================== */
 
-            </button>
+    {
+        question:
+            "Among the options given, which method(s) is/are used for the synthesis of atactic polystyrene? (G-23)",
 
+        options: [
+            "Free radical polymerization",
+            "Ring opening polymerization",
+            "Polycondensation",
+            "Ionic polymerization"
+        ],
 
-            <button
-                onclick="markReview()">
+        correctAnswers: [0, 3],
 
-                Mark for Review
+        type: "MSQ",
 
-            </button>
+        marks: 2
+    },
 
 
-            <button
-                onclick="saveNext()">
+    /* =====================================================
+       Q19 — MCQ — 2 MARKS
+       ===================================================== */
 
-                Save & Next
+    {
+        question:
+            "Two grades of NBR differ only in acrylonitrile content. Grade P contains more acrylonitrile than Grade Q.\n\n" +
+            "Which combination is generally expected?",
 
-            </button>
+        options: [
+            "P has lower polarity and lower oil resistance",
+            "P has higher polarity and better oil resistance",
+            "P has higher gas permeability and lower polarity",
+            "P behaves identically to natural rubber"
+        ],
 
+        answer: 1,
 
-            <button
-                class="submit-button"
-                onclick="submitExam()">
+        type: "MCQ",
 
-                Submit
+        marks: 2
+    },
 
-            </button>
 
-        </div>
+    /* =====================================================
+       Q20 — MCQ — 2 MARKS
+       ===================================================== */
 
-    </div>
+    {
+        question:
+            "Which characteristic is most closely associated with PLA compared with conventional petroleum-derived commodity polymers?",
 
+        options: [
+            "It is always completely biodegradable under every environmental condition.",
+            "It can be produced from renewable resources such as fermentation-derived lactic acid.",
+            "It is a natural rubber.",
+            "It contains sulfur crosslinks."
+        ],
 
+        answer: 1,
 
-    <!-- QUESTION PALETTE -->
+        type: "MCQ",
 
-    <div class="palette-section">
+        marks: 2
+    },
 
-        <h3>
-            Question Palette
-        </h3>
 
+    /* =====================================================
+       Q21 — MCQ — 2 MARKS
+       ===================================================== */
 
-        <div class="legend">
+    {
+        question:
+            "Which characteristic most fundamentally distinguishes a conventional elastomer from a lightly crosslinked thermoplastic?",
 
-            <div class="legend-item">
+        options: [
+            "Presence of carbon atoms",
+            "Ability to undergo large reversible deformation",
+            "Presence of covalent bonds in the backbone",
+            "Ability to contain additives"
+        ],
 
-                <span
-                    class="legend-box answered">
-                </span>
+        answer: 1,
 
-                <span>
-                    Answered
-                </span>
+        type: "MCQ",
 
-            </div>
+        marks: 2
+    },
 
 
-            <div class="legend-item">
+    /* =====================================================
+       Q22 — MCQ — 2 MARKS
+       ===================================================== */
 
-                <span
-                    class="legend-box review">
-                </span>
+    {
+        question:
+            "Arrange the following polymers in order of increasing glass transition temperature:\n\n" +
+            "HDPE, LDPE, PDMS, LLDPE, PS, PP, and PMMA",
 
-                <span>
-                    Marked for Review
-                </span>
+        options: [
+            "LDPE < LLDPE < HDPE < PP < PDMS < PS < PMMA",
+            "LLDPE < LDPE < HDPE < PDMS < PP < PS < PMMA",
+            "LDPE < LLDPE < HDPE < PDMS < PP < PS < PMMA",
+            "LDPE < HDPE < LLDPE < PP < PDMS < PMMA < PS"
+        ],
 
-            </div>
+        answer: 2,
 
+        type: "MCQ",
 
-            <div class="legend-item">
+        marks: 2
+    },
 
-                <span
-                    class="legend-box not-answered">
-                </span>
 
-                <span>
-                    Not Answered
-                </span>
+    /* =====================================================
+       Q23 — MCQ — 2 MARKS
+       ===================================================== */
 
-            </div>
+    {
+        question:
+            "Match the following polymers with their monomer/reactants:\n\n" +
 
-        </div>
+            "A. PF resin\n" +
+            "B. Nitrile rubber\n" +
+            "C. Epoxy resin\n" +
+            "D. Polycarbonate (PC)\n" +
+            "E. Butyl rubber\n\n" +
 
+            "1. Bisphenol-A + phosgene\n" +
+            "2. Diol + epichlorohydrin\n" +
+            "3. Phenol + formaldehyde\n" +
+            "4. Acrylonitrile + butadiene\n" +
+            "5. Isoprene + isobutylene\n\n" +
 
-        <div
-            class="palette"
-            id="palette">
+            "Choose the correct matching.",
 
-        </div>
+        options: [
+            "A–3, B–4, C–5, D–2, E–1",
+            "A–4, B–5, C–3, D–2, E–1",
+            "A–3, B–4, C–2, D–1, E–5",
+            "A–1, B–2, C–3, D–4, E–5",
+            "A–2, B–3, C–4, D–5, E–1"
+        ],
 
-    </div>
+        answer: 2,
 
-</div>
+        type: "MCQ",
 
+        marks: 2
+    },
 
 
-<!-- =====================================================
-     CALCULATOR
-     ===================================================== -->
+    /* =====================================================
+       Q24 — MCQ — 2 MARKS
+       ===================================================== */
 
-<div
-    id="calculator"
-    class="calculator-overlay">
+    {
+        question:
+            "High-impact polystyrene (HIPS) is a two-phase polymer blend. Which statement best describes its structure?",
 
-    <div class="calculator">
+        options: [
+            "A crosslinked polystyrene network containing sulfur",
+            "Polybutadiene rubber dispersed as a rubber phase within a polystyrene-rich matrix",
+            "Natural rubber dispersed in a polyamide matrix",
+            "Butyl rubber dispersed in a polyethylene matrix"
+        ],
 
-        <div class="calculator-header">
+        answer: 1,
 
-            <span>
-                GATE Calculator
-            </span>
+        type: "MCQ",
 
-            <button
-                onclick="closeCalculator()">
+        marks: 2
+    },
 
-                ×
 
-            </button>
+    /* =====================================================
+       Q25 — MCQ — 2 MARKS
+       ===================================================== */
 
-        </div>
+    {
+        question:
+            "Which statement correctly relates increasing acrylonitrile content in NBR to its properties?",
 
+        options: [
+            "Increasing acrylonitrile decreases polarity and decreases oil resistance.",
+            "Increasing acrylonitrile increases polarity and improves oil resistance.",
+            "Increasing acrylonitrile converts NBR into EPDM.",
+            "Increasing acrylonitrile eliminates the need for vulcanization."
+        ],
 
-        <input
-            type="text"
-            id="calc-display"
-            class="calc-display"
-            readonly>
+        answer: 1,
 
+        type: "MCQ",
 
-        <div class="calc-buttons">
+        marks: 2
+    },
 
-            <button onclick="calcClear()">C</button>
 
-            <button onclick="calcBackspace()">DEL</button>
+    /* =====================================================
+       Q26 — MCQ — 2 MARKS
+       ===================================================== */
 
-            <button onclick="calcInput('(')">(</button>
+    {
+        question:
+            "Consider the following polymer/reactant matching:\n\n" +
 
-            <button onclick="calcInput(')')">)</button>
+            "A. PF resin\n" +
+            "B. Nitrile rubber\n" +
+            "C. Epoxy resin\n" +
+            "D. Polycarbonate\n" +
+            "E. Butyl rubber\n\n" +
 
-            <button onclick="calcInput('/')">÷</button>
+            "1. Bisphenol-A + phosgene\n" +
+            "2. Diol + epichlorohydrin\n" +
+            "3. Phenol + formaldehyde\n" +
+            "4. Acrylonitrile + butadiene\n" +
+            "5. Isoprene + isobutylene\n\n" +
 
+            "Choose the correct matching.",
 
-            <button onclick="calcInput('7')">7</button>
+        options: [
+            "A–3, B–4, C–5, D–2, E–1",
+            "A–4, B–5, C–3, D–2, E–1",
+            "A–3, B–4, C–2, D–1, E–5",
+            "A–1, B–2, C–3, D–4, E–5",
+            "A–2, B–3, C–4, D–5, E–1"
+        ],
 
-            <button onclick="calcInput('8')">8</button>
+        answer: 2,
 
-            <button onclick="calcInput('9')">9</button>
+        type: "MCQ",
 
-            <button onclick="calcInput('*')">×</button>
+        marks: 2
+    }
 
-            <button onclick="calcInput('sqrt(')">√</button>
-
-
-            <button onclick="calcInput('4')">4</button>
-
-            <button onclick="calcInput('5')">5</button>
-
-            <button onclick="calcInput('6')">6</button>
-
-            <button onclick="calcInput('-')">−</button>
-
-            <button onclick="calcInput('^')">xʸ</button>
-
-
-            <button onclick="calcInput('1')">1</button>
-
-            <button onclick="calcInput('2')">2</button>
-
-            <button onclick="calcInput('3')">3</button>
-
-            <button onclick="calcInput('+')">+</button>
-
-            <button onclick="calcInput('Math.PI')">π</button>
-
-
-            <button onclick="calcInput('0')">0</button>
-
-            <button onclick="calcInput('.')">.</button>
-
-            <button onclick="calcInput('Math.sin(')">sin</button>
-
-            <button onclick="calcInput('Math.cos(')">cos</button>
-
-            <button onclick="calculateResult()">=</button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     SUBMIT CONFIRMATION
-     ===================================================== -->
-
-<div
-    id="submitModal"
-    class="modal-overlay">
-
-    <div class="modal-box">
-
-        <h2>
-            Submit Examination
-        </h2>
-
-        <p>
-            Are you sure you want to submit
-            the examination?
-        </p>
-
-        <div class="modal-buttons">
-
-            <button
-                class="modal-cancel"
-                onclick="closeSubmitModal()">
-
-                Cancel
-
-            </button>
-
-
-            <button
-                class="modal-submit"
-                onclick="confirmSubmit()">
-
-                Submit
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     NAME ENTRY
-     ===================================================== -->
-
-<div
-    id="nameModal"
-    class="modal-overlay">
-
-    <div class="modal-box">
-
-        <h2>
-            Enter Your Name
-        </h2>
-
-        <p>
-            Please enter your details before
-            submitting the examination.
-        </p>
-
-
-        <input
-            type="text"
-            id="candidateName"
-            class="name-input"
-            placeholder="Enter your name"
-            autocomplete="off">
-
-
-        <input
-            type="tel"
-            id="candidateMobile"
-            class="name-input"
-            placeholder="Enter 10-digit mobile number"
-            inputmode="numeric"
-            maxlength="10"
-            autocomplete="tel">
-
-
-        <div class="modal-buttons">
-
-            <button
-                class="modal-cancel"
-                onclick="closeNameModal()">
-
-                Cancel
-
-            </button>
-
-
-            <button
-                class="modal-submit"
-                onclick="finalSubmit()">
-
-                Submit
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     RESULT
-     ===================================================== -->
-
-<div
-    id="resultModal"
-    class="modal-overlay">
-
-    <div
-        class="modal-box result-box">
-
-        <h2>
-            Exam Submitted Successfully
-        </h2>
-
-
-        <p id="resultName"></p>
-
-
-        <div class="score-display">
-
-            <span>
-                Your Score
-            </span>
-
-            <strong id="resultScore"></strong>
-
-        </div>
-
-
-        <button
-            class="modal-submit"
-            onclick="closeResultAndReload()">
-
-            OK
-
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<script src="questions.js?v=9"></script>
-
-<script src="script.js?v=9"></script>
-
-
-</body>
-
-</html>
+];
