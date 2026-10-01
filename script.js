@@ -14,6 +14,14 @@ const EXAM_TIME = 60 * 60;
 
 
 /* =====================================================
+   GOOGLE APPS SCRIPT URL
+   ===================================================== */
+
+const GOOGLE_APPS_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbx5DImqgmnSgKSe8SSfygd6ncOatgOB4z6QVXlMaPUZccU9szejyGLIip4QMNsV953GxQ/exec";
+
+
+/* =====================================================
    START EXAM
    ===================================================== */
 
@@ -32,7 +40,7 @@ function startExam() {
     examEnded = false;
 
     sessionStorage.setItem(
-        "gateExamStartTime",
+        "polymerGateTest5StartTime",
         Date.now()
     );
 
@@ -132,7 +140,8 @@ function loadQuestion() {
                     step="any"
                     placeholder="Enter answer"
                     value="${
-                        previous !== null
+                        previous !== null &&
+                        previous !== undefined
                         ? previous
                         : ""
                     }"
@@ -317,7 +326,6 @@ function saveCurrentAnswer() {
                 selected.value
             );
 
-
         return true;
 
     }
@@ -366,7 +374,6 @@ function saveCurrentAnswer() {
             selectedAnswers.sort(
                 (a, b) => a - b
             );
-
 
         return true;
 
@@ -497,7 +504,8 @@ function updatePalette() {
         }
 
         else if (
-            answers[i] !== null
+            answers[i] !== null &&
+            answers[i] !== undefined
         ) {
 
             colorClass =
@@ -554,7 +562,7 @@ function updateTimer() {
     let startTime =
         Number(
             sessionStorage.getItem(
-                "gateExamStartTime"
+                "polymerGateTest5StartTime"
             )
         );
 
@@ -655,7 +663,7 @@ function submitExam() {
 
 
 /* =====================================================
-   CLOSE SUBMIT CONFIRMATION
+   CLOSE SUBMIT MODAL
    ===================================================== */
 
 function closeSubmitModal() {
@@ -682,7 +690,7 @@ function confirmSubmit() {
 
 
 /* =====================================================
-   NAME + MOBILE MODAL
+   NAME MODAL
    ===================================================== */
 
 function openNameModal(autoSubmit) {
@@ -770,7 +778,9 @@ function calculateScore() {
 
             if (
                 answers[i] === null ||
-                answers[i] === undefined
+                answers[i] === undefined ||
+                q.answer === null ||
+                q.answer === undefined
             ) {
 
                 continue;
@@ -971,17 +981,12 @@ function finalSubmit() {
 
 
     /* =================================================
-       GOOGLE APPS SCRIPT WEB APP
-       SHEET4
+       SEND DATA TO GOOGLE SHEETS
        ================================================= */
 
     let url =
-        "https://script.google.com/macros/s/AKfycbx5DImqgmnSgKSe8SSfygd6ncOatgOB4z6QVXlMaPUZccU9szejyGLIip4QMNsV953GxQ/exec";
+        GOOGLE_APPS_SCRIPT_URL;
 
-
-    /* =================================================
-       CANDIDATE NAME
-       ================================================= */
 
     url +=
         "?name=" +
@@ -989,10 +994,6 @@ function finalSubmit() {
             name
         );
 
-
-    /* =================================================
-       MOBILE NUMBER
-       ================================================= */
 
     url +=
         "&mobile=" +
@@ -1002,7 +1003,7 @@ function finalSubmit() {
 
 
     /* =================================================
-       SEND Q1-Q22
+       SEND Q1-Q25
        ================================================= */
 
     for (
@@ -1021,7 +1022,6 @@ function finalSubmit() {
             answers[i] !== null &&
             answers[i] !== undefined
         ) {
-
 
             /* ============================
                NAT
@@ -1099,7 +1099,7 @@ function finalSubmit() {
 
 
     /* =================================================
-       FINAL SCORE
+       SCORE
        ================================================= */
 
     url +=
@@ -1110,8 +1110,7 @@ function finalSubmit() {
 
 
     /* =================================================
-       SEND TO GOOGLE SHEETS
-       WITHOUT LEAVING EXAM PAGE
+       SEND WITHOUT LEAVING PAGE
        ================================================= */
 
     let iframe =
@@ -1134,7 +1133,7 @@ function finalSubmit() {
 
 
     /* =================================================
-       EXAM OFFICIALLY FINISHED
+       EXAM FINISHED
        ================================================= */
 
     examEnded = true;
@@ -1164,7 +1163,7 @@ function finalSubmit() {
         "resultScore"
     ).innerText =
         score.toFixed(2) +
-        " / 34";
+        " / 40";
 
 
     document.getElementById(
@@ -1174,7 +1173,7 @@ function finalSubmit() {
 
 
     sessionStorage.removeItem(
-        "gateExamStartTime"
+        "polymerGateTest5StartTime"
     );
 
 }
