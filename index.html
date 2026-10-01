@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>POLYMER GATE | Specialty Polymers & Polymer Engineering</title>
+    <title>POLYMER GATE | Polymer Science & Engineering</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -20,7 +20,7 @@
 <div class="header">
 
     <div class="header-title">
-        POLYMER GATE - Specialty Polymers & Polymer Engineering
+        POLYMER GATE - Polymer Science & Engineering
     </div>
 
 
@@ -70,7 +70,7 @@
         </h1>
 
         <h2>
-            GATE XE-F Mock Test
+            GATE XE-F Polymer Science Mock Test
         </h2>
 
 
@@ -83,7 +83,7 @@
                 </strong>
 
                 <span>
-                    25
+                    26
                 </span>
 
             </div>
@@ -96,7 +96,7 @@
                 </strong>
 
                 <span>
-                    40
+                    42
                 </span>
 
             </div>
@@ -117,7 +117,6 @@
         </div>
 
 
-
         <h3>
             Test Instructions
         </h3>
@@ -125,19 +124,19 @@
         <ul class="instructions-list">
 
             <li>
-                The test contains <strong>25 questions</strong>.
+                The test contains <strong>26 questions</strong>.
             </li>
 
             <li>
-                Q1-Q10 carry <strong>1 mark</strong> each.
+                Questions 1–10 carry <strong>1 mark</strong> each.
             </li>
 
             <li>
-                Q11-Q25 carry <strong>2 marks</strong> each.
+                Questions 11–26 carry <strong>2 marks</strong> each.
             </li>
 
             <li>
-                The total marks are <strong>40</strong>.
+                The total marks are <strong>42</strong>.
             </li>
 
             <li>
@@ -150,8 +149,7 @@
             </li>
 
             <li>
-                Use <strong>Save & Next</strong> to save your response
-                and move to the next question.
+                Use <strong>Save & Next</strong> to save your response.
             </li>
 
             <li>
@@ -163,8 +161,7 @@
             </li>
 
             <li>
-                Use <strong>Mark for Review</strong> to mark a question
-                for later review.
+                Use <strong>Mark for Review</strong> to mark a question.
             </li>
 
             <li>
@@ -180,7 +177,7 @@
             </li>
 
             <li>
-                An on-screen calculator is available during the examination.
+                An on-screen calculator is available.
             </li>
 
             <li>
@@ -189,7 +186,6 @@
             </li>
 
         </ul>
-
 
 
         <h3>
@@ -208,13 +204,7 @@
                 One or more options can be selected.
             </li>
 
-            <li>
-                <strong>NAT:</strong>
-                Enter the numerical answer using the input box.
-            </li>
-
         </ul>
-
 
 
         <h3>
@@ -273,28 +263,7 @@
                 </strong>
 
                 <span>
-                    Correct: +1 / +2
-                </span>
-
-                <span>
-                    Wrong: 0
-                </span>
-
-                <span>
-                    Unanswered: 0
-                </span>
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                    NAT
-                </strong>
-
-                <span>
-                    Correct: +1 / +2
+                    Correct: Full marks
                 </span>
 
                 <span>
@@ -310,7 +279,6 @@
         </div>
 
 
-
         <div class="important-note">
 
             <strong>
@@ -319,8 +287,7 @@
 
             Once you click
             <strong>START EXAM</strong>,
-            the timer will begin and the examination
-            cannot be restarted.
+            the timer will begin.
 
         </div>
 
@@ -349,7 +316,6 @@
     class="container"
     style="display:none;">
 
-
     <div class="question-area">
 
         <div
@@ -364,24 +330,39 @@
         <div id="options"></div>
 
 
-
         <div class="buttons">
 
-            <button onclick="prevQuestion()">
+            <button
+                onclick="prevQuestion()">
+
                 Previous
+
             </button>
 
-            <button onclick="clearResponse()">
+
+            <button
+                onclick="clearResponse()">
+
                 Clear
+
             </button>
 
-            <button onclick="markReview()">
+
+            <button
+                onclick="markReview()">
+
                 Mark for Review
+
             </button>
 
-            <button onclick="saveNext()">
+
+            <button
+                onclick="saveNext()">
+
                 Save & Next
+
             </button>
+
 
             <button
                 class="submit-button"
@@ -452,6 +433,7 @@
         <div
             class="palette"
             id="palette">
+
         </div>
 
     </div>
@@ -476,8 +458,11 @@
                 GATE Calculator
             </span>
 
-            <button onclick="closeCalculator()">
+            <button
+                onclick="closeCalculator()">
+
                 ×
+
             </button>
 
         </div>
@@ -487,40 +472,63 @@
             type="text"
             id="calc-display"
             class="calc-display"
-            readonly
-        >
+            readonly>
 
 
         <div class="calc-buttons">
 
             <button onclick="calcClear()">C</button>
+
             <button onclick="calcBackspace()">DEL</button>
+
             <button onclick="calcInput('(')">(</button>
+
             <button onclick="calcInput(')')">)</button>
+
             <button onclick="calcInput('/')">÷</button>
 
+
             <button onclick="calcInput('7')">7</button>
+
             <button onclick="calcInput('8')">8</button>
+
             <button onclick="calcInput('9')">9</button>
+
             <button onclick="calcInput('*')">×</button>
+
             <button onclick="calcInput('sqrt(')">√</button>
 
+
             <button onclick="calcInput('4')">4</button>
+
             <button onclick="calcInput('5')">5</button>
+
             <button onclick="calcInput('6')">6</button>
+
             <button onclick="calcInput('-')">−</button>
+
             <button onclick="calcInput('^')">xʸ</button>
 
+
             <button onclick="calcInput('1')">1</button>
+
             <button onclick="calcInput('2')">2</button>
+
             <button onclick="calcInput('3')">3</button>
+
             <button onclick="calcInput('+')">+</button>
+
             <button onclick="calcInput('Math.PI')">π</button>
 
+
             <button onclick="calcInput('0')">0</button>
+
             <button onclick="calcInput('.')">.</button>
+
             <button onclick="calcInput('Math.sin(')">sin</button>
+
             <button onclick="calcInput('Math.cos(')">cos</button>
+
             <button onclick="calculateResult()">=</button>
 
         </div>
@@ -560,6 +568,7 @@
 
             </button>
 
+
             <button
                 class="modal-submit"
                 onclick="confirmSubmit()">
@@ -591,17 +600,18 @@
         </h2>
 
         <p>
-            Please enter your name before
+            Please enter your details before
             submitting the examination.
         </p>
+
 
         <input
             type="text"
             id="candidateName"
             class="name-input"
             placeholder="Enter your name"
-            autocomplete="off"
-        >
+            autocomplete="off">
+
 
         <input
             type="tel"
@@ -610,8 +620,8 @@
             placeholder="Enter 10-digit mobile number"
             inputmode="numeric"
             maxlength="10"
-            autocomplete="tel"
-        >
+            autocomplete="tel">
+
 
         <div class="modal-buttons">
 
@@ -622,6 +632,7 @@
                 Cancel
 
             </button>
+
 
             <button
                 class="modal-submit"
@@ -654,7 +665,9 @@
             Exam Submitted Successfully
         </h2>
 
+
         <p id="resultName"></p>
+
 
         <div class="score-display">
 
@@ -665,6 +678,7 @@
             <strong id="resultScore"></strong>
 
         </div>
+
 
         <button
             class="modal-submit"
@@ -680,8 +694,10 @@
 
 
 
-<script src="questions.js?v=10"></script>
-<script src="script.js?v=10"></script>
+<script src="questions.js?v=9"></script>
+
+<script src="script.js?v=9"></script>
+
 
 </body>
 
