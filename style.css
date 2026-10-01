@@ -438,8 +438,6 @@ body {
 
 #question {
 
-    white-space: pre-line;
-
     font-size: 20px;
 
     line-height: 1.6;
@@ -464,9 +462,9 @@ body {
 
     display: block;
 
-    padding: 10px;
+    padding: 12px;
 
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 
     cursor: pointer;
 
@@ -995,48 +993,77 @@ body {
 
 
 /* =====================================================
-   NAT
+   MOBILE
    ===================================================== */
 
-.nat-answer {
+@media (max-width: 800px) {
 
-    margin-top: 15px;
+    .header {
 
-}
+        height: auto;
 
+        min-height: 70px;
 
-.nat-answer label {
+        padding: 12px;
 
-    display: block;
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-
-}
+    }
 
 
-.nat-answer input {
+    .header-title {
 
-    width: 220px;
+        font-size: 17px;
 
-    padding: 12px;
-
-    font-size: 18px;
-
-    border: 1px solid #999;
-
-    border-radius: 4px;
-
-    box-sizing: border-box;
-
-}
+    }
 
 
-.nat-note {
+    .header-right {
 
-    color: #555;
+        gap: 8px;
 
-    font-size: 13px;
+    }
+
+
+    .calculator-button {
+
+        display: none;
+
+    }
+
+
+    .container {
+
+        flex-direction: column;
+
+    }
+
+
+    .question-area {
+
+        width: 100%;
+
+        padding: 20px;
+
+    }
+
+
+    .palette-section {
+
+        width: 100%;
+
+    }
+
+
+    .marking-scheme {
+
+        flex-direction: column;
+
+    }
+
+
+    .test-details {
+
+        flex-direction: column;
+
+    }
 
 }
