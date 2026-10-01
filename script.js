@@ -867,7 +867,7 @@ function finalSubmit() {
        ================================================= */
 
     url +=
-        "&name=" +
+        "?name=" +
         encodeURIComponent(
             name
         );
